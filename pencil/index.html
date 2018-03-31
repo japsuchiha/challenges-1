@@ -17,18 +17,28 @@
 <body>
         <div class="banner">
                 <ul class="links">
-                    <li><i class="fas fa-pencil-alt"></i></li>
-                    <li>Features</li>
-                    <li>Uses</li>
-                    <li>Quotes</li>
-                    <li class="fe"><i class="fas fa-shopping-cart"></i></li>
+                    <li><a href="#"><i class="fas fa-pencil-alt"></i></a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Uses</a></li>
+                    <li><a href="#">Quotes</a></li>
+                    <li class="fe"><a href="https://www.amazon.com/Pencils/b?node=12901051" target="_blank"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             <div class="container">
-            <h1>
-                Pencil
-            </h1>
+            <h1>Pencil</h1>
             <p>A revolutionary new writing device from the same people who brought you Quill &amp; Ink</p>
             </div>
         </div>
+        <script>
+            window.onscroll = function() {scroll()};
+            let nav = document.querySelector(".links");
+            let sticky = nav.offsetTop;
+            console.log(sticky);
+            function scroll(){
+                if(window.pageYOffset > sticky)
+                    nav.classList.add("sticky");
+                else
+                    nav.classList.remove("sticky");
+            }
+    </script>
 </body>
 </html>
