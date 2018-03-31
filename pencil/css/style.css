@@ -55,9 +55,48 @@ li:last-child{
     padding-top: 3%;
     padding-bottom: 1%
 }
+.big-h{
+    display: none;
+}
 
 @media (min-width: 768px) {
-    .container { width: 750px; } 
+    .container { 
+        width: 750px;
+        padding-bottom: 5%;
+        padding-left: 80px;}
+    .banner{
+        background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/pencil-header-sm.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .links{
+        display: none;
+    }
+    .container h1{
+        padding-top: 10%;
+        font-size: 4em;
+        color: black;
+    }
+    .container p{
+        max-width: 50%;
+        color: black;
+    }
+    .big-h{
+        display: block;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-top: 2%;
+        width: 20%;
+        background: #814236;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid #391d18;
+    }
+    .big-h:hover{
+        background: #5d3027;
+        cursor: pointer;
+    }
 }
 @media (min-width: 992px) {
     .container { width: 970px; } 
