@@ -14,11 +14,15 @@ p{
     margin-top: 0;
     margin-bottom: inherit;
 }
+.wrapper{
+    overflow: auto;
+}
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; 
+  overflow: hidden;
 }
 .banner{
     background: linear-gradient(180deg,#391D18,#814236);
@@ -30,12 +34,18 @@ p{
     margin: 0;
     overflow: hidden;
     padding-left: 1%;
+    position: sticky;
+    z-index: 2;
+    top: 1px;
+}
+.sticky + .container{
+    padding-top: 10px;
 }
 li{
     float: left;
     padding-left: 1%;
     padding-top: 2%;
-    padding-right: 2%
+    padding-right: 2%;
 }
 li a{
     text-decoration: none;
@@ -50,6 +60,11 @@ li:last-child{
     top: 0;
     width: 100%;
 }
+.back{
+    background: #391D18;
+    width: 100%;
+    padding-bottom: 10px;
+}
 
 .container h1{
     padding-top: 3%;
@@ -58,7 +73,55 @@ li:last-child{
 .big-h{
     display: none;
 }
+.container p{
+    padding-bottom: 15px;
+}
+.features{
+    text-align: center;
+}
+.features > p{
+    font-variant: small-caps;
+}
 
+.section{
+    background: #F8F8F8;
+    position: relative;
+    overflow: auto;
+}
+.card{
+    background: white;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    height: inherit;
+    border: 1px solid #dfdfdf;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+svg{
+    height: 40px;
+}
+.svg{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.col2 > h1{
+    font-size: 18px;
+    font-weight: 300;
+     padding: 0;
+}
+.col2{
+    flex: 2;
+    text-align: justify;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.col2 > span{
+    font-size: 16px;
+    font-weight: 100;
+}
 @media (min-width: 768px) {
     .container { 
         width: 750px;
@@ -86,10 +149,10 @@ li:last-child{
     }
     .big-h{
         display: block;
-        padding-top: 1%;
-        padding-bottom: 1%;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin-left: 70px;
-        margin-top: 2%;
+        margin-top: 20px;
         width: 150px;
         background: #814236;
         padding-left: 10px;
