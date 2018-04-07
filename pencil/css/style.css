@@ -85,14 +85,19 @@ li:last-child{
 
 .section{
     background: #F8F8F8;
-    position: relative;
     overflow: auto;
+    max-height: 100%;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
 }
 .card{
     background: white;
     height: 100px;
     display: flex;
-    flex-wrap: wrap;
+    flex: 1;
+    flex-wrap: nowrap;
     box-sizing: border-box;
     height: inherit;
     border: 1px solid #dfdfdf;
@@ -122,16 +127,34 @@ svg{
     font-size: 16px;
     font-weight: 100;
 }
+.section_2{
+    background: #F8F8F8;
+    overflow: auto;
+    max-height: 100%; 
+}
+.card_2{
+    background: white;
+    height: inherit;
+    border: 1px solid #dfdfdf;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/note-taking.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @media (min-width: 768px) {
-    .container { 
-        width: 750px;
-        padding-bottom: 5%;
-        }
+    
     .banner{
         background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/pencil-header-sm.jpg");
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        padding-bottom: 30px;
+    }
+    .section{
+        height: 100%;
     }
     .links{
         display: none;
@@ -163,9 +186,37 @@ svg{
         background: #5d3027;
         cursor: pointer;
     }
+    
+    .features{
+        text-align: center;
+        margin: 0;
+        overflow: hidden;
+    }
+    .features > p{
+        max-width: 100%;
+        padding: 0;
+    }
+    .card-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+    .card{
+        display: flex;
+        flex-basis: calc(50% - 40px);
+        flex-direction: column;
+        margin-left: 20px;
+        overflow: hidden;
+    }
+    .col2 > h1{
+        font-size: 18px;
+        padding: 0;
+    }
+    .col2{
+        text-align: center;
+    }
 }
 @media (min-width: 992px) {
-    .container { width: 970px; } 
     .banner{
         background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/pencil-header-md.jpg");
         background-size: cover;
@@ -202,14 +253,54 @@ svg{
         background: #5d3027;
         cursor: pointer;
     }
+    .features{
+        text-align: center;
+        overflow: hidden;
+    }
+    .col2 > h1{
+        font-size: 18px;
+        padding: 0;
+    }
+    .col2{
+        text-align: center;
+    }
+    .features >p{
+        margin: 0;
+        max-width: 100%;
+    }
+    .card-container{
+        justify-content: center;
+        max-width: 100%;
+    }
 }
 @media (min-width: 1200px) {
-    .container { width: 1170px; } 
+    .links{
+        display: none;
+    }
+    .container{
+        overflow: hidden;
+    }
     .banner{
          background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/pencil-header-lg.jpg");
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .card-container{
+        flex-direction: row;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    .features{
+        margin: 0;
+        overflow: hidden;
+    }
+    .card{
+        display: flex;
+        flex-grow: 1;
+        max-width: 20%;
+        overflow: hidden;
     }
 }
 
