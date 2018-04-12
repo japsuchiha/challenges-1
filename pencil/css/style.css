@@ -153,7 +153,58 @@ svg{
 .card_2>h1{
     font-weight:300; 
 }
-
+.section-3{
+    background : #f8f8f8;
+}
+.test{
+    text-align: center;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    display: flex;
+    flex-grow: 1;
+}
+.text>img{
+    border-radius: 50%;
+    height: 50%;
+}
+.text>p{
+    text-align: left;
+    padding-left: 10px;
+}
+.footer{
+    background: #391d18;
+    color: #eeeeee;
+    overflow: hidden;
+}
+.footer>p{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+.footer>ul{
+    list-style: none;
+}
+.last li:last-child{
+        float: left;
+    }
+.last{
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.last + p{
+    padding: 0;
+    clear: both;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.footer a{
+    text-decoration: none;
+    color: #aaaaaa;
+}
 
 @media (min-width: 768px) {
     
@@ -251,6 +302,28 @@ svg{
         flex-direction: column;
         flex-wrap: wrap;
     }
+    .test>p{
+        max-width: 100%;
+        padding: 0;
+    }
+    .text-container{
+        max-width: 75%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .text>p{
+        padding-left: 10px;
+        max-width: 100%;
+    }
+    .footer>p{
+        float: left;
+    }
+    .last li{
+        float: right;
+    }
+     .last li:last-child{
+        float: right;
+    }
 }
 @media (min-width: 992px) {
     .banner{
@@ -331,7 +404,38 @@ svg{
         max-width: 100%;
         padding: 0;
     }
-    
+    .text-container{
+        flex-direction: row;
+        max-width: 75%;
+        margin: 0 auto;
+    }
+    .test>p{
+        padding: 0;
+        padding-top: 10px;
+        max-width: 100%;
+    }
+    .text{
+        margin-right: 10px;
+    }
+    .text>p{
+        padding: 0;
+        padding-left: 10px;
+        max-width: 100%;
+    }
+    .text>img{
+        height: 25%;
+        width: 25%;
+    }
+     .footer>p{
+        float: left;
+    }
+    .last li{
+        float: right;
+    }
+     .last li:last-child{
+        float: right;
+    }
+
 }
 @media (min-width: 1200px) {
     .links{
@@ -369,6 +473,15 @@ svg{
     }
     .uses{
         width: 75%;
+    }
+     .footer>p{
+        float: left;
+    }
+    .last li{
+        float: right;
+    }
+    .last li:last-child{
+        float: right;
     }
 }
 
