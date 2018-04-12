@@ -132,17 +132,28 @@ svg{
     overflow: auto;
     max-height: 100%; 
 }
+.uses{
+    text-align: center;
+    max-width: 85%;
+}
 .card_2{
     background: white;
     height: inherit;
     border: 1px solid #dfdfdf;
-    padding-right: 10px;
-    padding-bottom: 20px;
     margin-bottom: 10px;
-    background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/note-taking.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    text-align: left;
 }
+.card_2>img{
+    height: 150px;
+}
+.card_2>h1, .card_2>p{
+    font-size: 16px;
+    margin-left: 5px;
+}
+.card_2>h1{
+    font-weight:300; 
+}
+
 
 @media (min-width: 768px) {
     
@@ -205,7 +216,6 @@ svg{
         display: flex;
         flex-basis: calc(50% - 40px);
         flex-direction: column;
-        margin-left: 20px;
         overflow: hidden;
     }
     .col2 > h1{
@@ -214,6 +224,32 @@ svg{
     }
     .col2{
         text-align: center;
+    }
+    .uses{
+        text-align: center;
+    }
+    .uses>p{
+        max-width: 100%;
+        padding: 0;
+    }
+    .card_2>h1{
+        font-size: 16px;
+        padding: 0;
+    }
+    .card_2{
+        max-width:50%;
+        margin: 0 auto;
+    }
+    .card_2>p{
+        padding: 0;
+        max-width: 100%;
+    }
+    .card_2{
+        margin-top: 10px;
+    }
+    .card-container2{
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 }
 @media (min-width: 992px) {
@@ -272,6 +308,30 @@ svg{
         justify-content: center;
         max-width: 100%;
     }
+    .uses{
+        width: 75%;
+    }
+    .card_2{
+        display: flex;
+        flex-basis: calc(50% - 40px);
+        flex-direction: column;
+        margin-left: 20px;
+        overflow: hidden;
+    }
+    .card_2>h1{
+        font-size: 16px;
+        padding: 0;
+    }
+    .card_2>p{
+        padding-left: 0;
+        padding-top: 10px;
+        max-width: 100%;
+    }
+    .uses>p{
+        max-width: 100%;
+        padding: 0;
+    }
+    
 }
 @media (min-width: 1200px) {
     .links{
@@ -296,11 +356,19 @@ svg{
         margin: 0;
         overflow: hidden;
     }
+    .features>p{
+        padding-top: 5px;
+        padding-left: 0;
+    }
     .card{
         display: flex;
         flex-grow: 1;
         max-width: 20%;
         overflow: hidden;
+        margin-left: 5px;
+    }
+    .uses{
+        width: 75%;
     }
 }
 
