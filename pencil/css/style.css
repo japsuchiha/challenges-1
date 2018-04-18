@@ -1,18 +1,488 @@
 /* general container element to constrain content width on wider screens */
+body{
+    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 100;
+    margin: 0;
+}
+p{
+    line-height: 1.43;
+    margin-top: 0;
+    margin-bottom: inherit;
+}
+.wrapper{
+    overflow: auto;
+}
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; 
+  overflow: hidden;
 }
+.banner{
+    background: linear-gradient(180deg,#391D18,#814236);
+    color: #dfdfdf;
+}
+.links{
+    list-style: none;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 1%;
+    position: sticky;
+    z-index: 2;
+    top: 1px;
+}
+.sticky + .container{
+    padding-top: 10px;
+}
+li{
+    float: left;
+    padding-left: 1%;
+    padding-top: 2%;
+    padding-right: 2%;
+}
+li a{
+    text-decoration: none;
+    color: #dfdfdf;
+}
+li:last-child{
+    float: right;
+    padding-right: 2%;
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.back{
+    background: #391D18;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.container h1{
+    padding-top: 3%;
+    padding-bottom: 1%
+}
+.big-h{
+    display: none;
+}
+.container p{
+    padding-bottom: 15px;
+}
+.features{
+    text-align: center;
+}
+.features > p{
+    font-variant: small-caps;
+}
+
+.section{
+    background: #F8F8F8;
+    overflow: auto;
+    max-height: 100%;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    background: white;
+    height: 100px;
+    display: flex;
+    flex: 1;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    height: inherit;
+    border: 1px solid #dfdfdf;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+svg{
+    height: 40px;
+}
+.svg{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.col2 > h1{
+    font-size: 18px;
+    font-weight: 300;
+     padding: 0;
+}
+.col2{
+    flex: 2;
+    text-align: justify;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.col2 > span{
+    font-size: 16px;
+    font-weight: 100;
+}
+.section_2{
+    background: #F8F8F8;
+    overflow: auto;
+    max-height: 100%; 
+}
+.uses{
+    text-align: center;
+    max-width: 85%;
+}
+.card_2{
+    background: white;
+    height: inherit;
+    border: 1px solid #dfdfdf;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.card_2>img{
+    height: 150px;
+}
+.card_2>h1, .card_2>p{
+    font-size: 16px;
+    margin-left: 5px;
+}
+.card_2>h1{
+    font-weight:300; 
+}
+.section-3{
+    background : #f8f8f8;
+}
+.test{
+    text-align: center;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    display: flex;
+    flex-grow: 1;
+}
+.text>img{
+    border-radius: 50%;
+    height: 50%;
+}
+.text>p{
+    text-align: left;
+    padding-left: 10px;
+}
+.footer{
+    background: #391d18;
+    color: #eeeeee;
+    overflow: hidden;
+}
+.footer>p{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+.footer>ul{
+    list-style: none;
+}
+.last li:last-child{
+        float: left;
+    }
+.last{
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.last + p{
+    padding: 0;
+    clear: both;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.footer a{
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
 @media (min-width: 768px) {
-    .container { width: 750px; } 
+    
+    .banner{
+        background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/pencil-header-sm.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding-bottom: 30px;
+    }
+    .section{
+        height: 100%;
+    }
+    .links{
+        display: none;
+    }
+    .container h1{
+        padding-top: 10%;
+        font-size: 4em;
+        color: black;
+        padding-left: 70px;
+    }
+    .container p{
+        max-width: 50%;
+        color: black;
+        padding-left: 70px;
+    }
+    .big-h{
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 70px;
+        margin-top: 20px;
+        width: 150px;
+        background: #814236;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid #391d18;
+    }
+    .big-h:hover{
+        background: #5d3027;
+        cursor: pointer;
+    }
+    
+    .features{
+        text-align: center;
+        margin: 0;
+        overflow: hidden;
+    }
+    .features > p{
+        max-width: 100%;
+        padding: 0;
+    }
+    .card-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+    .card{
+        display: flex;
+        flex-basis: calc(50% - 40px);
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .col2 > h1{
+        font-size: 18px;
+        padding: 0;
+    }
+    .col2{
+        text-align: center;
+    }
+    .uses{
+        text-align: center;
+    }
+    .uses>p{
+        max-width: 100%;
+        padding: 0;
+    }
+    .card_2>h1{
+        font-size: 16px;
+        padding: 0;
+    }
+    .card_2{
+        max-width:50%;
+        margin: 0 auto;
+    }
+    .card_2>p{
+        padding: 0;
+        max-width: 100%;
+    }
+    .card_2{
+        margin-top: 10px;
+    }
+    .card-container2{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .test>p{
+        max-width: 100%;
+        padding: 0;
+    }
+    .text-container{
+        max-width: 75%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .text>p{
+        padding-left: 10px;
+        max-width: 100%;
+    }
+    .footer>p{
+        float: left;
+    }
+    .last li{
+        float: right;
+    }
+     .last li:last-child{
+        float: right;
+    }
 }
 @media (min-width: 992px) {
-    .container { width: 970px; } 
+    .banner{
+        background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/pencil-header-md.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .links{
+        display: none;
+    }
+    .container h1{
+        padding-top: 10%;
+        font-size: 4em;
+        color: black;
+        padding-left: 70px;
+    }
+    .container p{
+        max-width: 50%;
+        color: black;
+        padding-left: 70px;
+    }
+    .big-h{
+        display: block;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-left: 70px;
+        margin-top: 2%;
+        width: 150px;
+        background: #814236;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid #391d18;
+    }
+    .big-h:hover{
+        background: #5d3027;
+        cursor: pointer;
+    }
+    .features{
+        text-align: center;
+        overflow: hidden;
+    }
+    .col2 > h1{
+        font-size: 18px;
+        padding: 0;
+    }
+    .col2{
+        text-align: center;
+    }
+    .features >p{
+        margin: 0;
+        max-width: 100%;
+    }
+    .card-container{
+        justify-content: center;
+        max-width: 100%;
+    }
+    .uses{
+        width: 75%;
+    }
+    .card_2{
+        display: flex;
+        flex-basis: calc(50% - 40px);
+        flex-direction: column;
+        margin-left: 20px;
+        overflow: hidden;
+    }
+    .card_2>h1{
+        font-size: 16px;
+        padding: 0;
+    }
+    .card_2>p{
+        padding-left: 0;
+        padding-top: 10px;
+        max-width: 100%;
+    }
+    .uses>p{
+        max-width: 100%;
+        padding: 0;
+    }
+    .text-container{
+        flex-direction: row;
+        max-width: 75%;
+        margin: 0 auto;
+    }
+    .test>p{
+        padding: 0;
+        padding-top: 10px;
+        max-width: 100%;
+    }
+    .text{
+        margin-right: 10px;
+    }
+    .text>p{
+        padding: 0;
+        padding-left: 10px;
+        max-width: 100%;
+    }
+    .text>img{
+        height: 25%;
+        width: 25%;
+    }
+     .footer>p{
+        float: left;
+    }
+    .last li{
+        float: right;
+    }
+     .last li:last-child{
+        float: right;
+    }
+
 }
 @media (min-width: 1200px) {
-    .container { width: 1170px; } 
+    .links{
+        display: none;
+    }
+    .container{
+        overflow: hidden;
+    }
+    .banner{
+         background-image: url("C:/Users/jpnts/Desktop/info-343/challenges-1/pencil/img/pencil-header-lg.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+    .card-container{
+        flex-direction: row;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    .features{
+        margin: 0;
+        overflow: hidden;
+    }
+    .features>p{
+        padding-top: 5px;
+        padding-left: 0;
+    }
+    .card{
+        display: flex;
+        flex-grow: 1;
+        max-width: 20%;
+        overflow: hidden;
+        margin-left: 5px;
+    }
+    .uses{
+        width: 75%;
+    }
+     .footer>p{
+        float: left;
+    }
+    .last li{
+        float: right;
+    }
+    .last li:last-child{
+        float: right;
+    }
 }
 
 
