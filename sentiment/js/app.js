@@ -21,16 +21,21 @@ let extractWords = function(text){
 
 function findSentimentWords(inputArray){
     for(let i of inputArray){
-        if(_SENTIMENTS[i] !== undefined){
-            for(let j of _SENTIMENTS[i].keys())
-        console.log(_SENTIMENTS[i]);
+        console.log(i+" " +"bla");
+        for(let j in _SENTIMENTS[i]){
+            for(let k in _EMOTIONS){
+                console.log(k);
+            if(_SENTIMENTS[i].hasOwnProperty(k))
+               _EMOTIONS[k].push(i);
+            }
         }
     }
+    console.log(_EMOTIONS);
 }
 
 let m = extractWords("Amazingly, I prefer a #rainy day to #sunshine.");
 
-console.log(m[0]);
+
 
 findSentimentWords(m);
 
