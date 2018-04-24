@@ -39,17 +39,26 @@ console.log(_EMOTIONS);
 //findSentimentWords(k)
 console.log(_SAMPLE_TWEETS[0].text);
 function analyzeTweets(array){
+    let count =0;
     let words = [];
     for(let i =0; i< array.length ;i++){
         words.push(extractWords(array[i].text));
+        count =  count + (words[i].length);
     }
-    console.log(words);
     let sentiments = [];
     for(let i = 0; i<words.length;i++){
         findSentimentWords(words[i]);
     }
     sentiments.push(_EMOTIONS);
-    console.log(sentiments);
+    
+    let obj ={
+        "words" : sentiments,
+        "percentage" : 0
+    }
+        console.log(obj);
+      console.log(count);
+      console.log((sentiments[0].anger.length/count)*100);
+    
 }
 
 analyzeTweets(_SAMPLE_TWEETS);
