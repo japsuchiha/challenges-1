@@ -16,6 +16,7 @@ let extractWords = function(text){
     let text_2 = text.toLowerCase();
     let res = text_2.split(/\W+/);
     let result = res.filter(word => word.length>1);
+    //console.log(result);
     return result;
 }
 
@@ -31,8 +32,24 @@ function findSentimentWords(inputArray){
 console.log(_EMOTIONS);
 }
 
-let m = extractWords("Amazingly, I prefer a #rainy day to #sunshine.");
-let k = extractWords("lovely day");
+//let m = extractWords(_SAMPLE_TWEETS[1].text);
+//let k = extractWords("lovely day");
 
-findSentimentWords(m);
-findSentimentWords(k)
+//findSentimentWords(m);
+//findSentimentWords(k)
+console.log(_SAMPLE_TWEETS[0].text);
+function analyzeTweets(array){
+    let words = [];
+    for(let i =0; i< array.length ;i++){
+        words.push(extractWords(array[i].text));
+    }
+    console.log(words);
+    let sentiments = [];
+    for(let i = 0; i<words.length;i++){
+        findSentimentWords(words[i]);
+    }
+    sentiments.push(_EMOTIONS);
+    console.log(sentiments);
+}
+
+analyzeTweets(_SAMPLE_TWEETS);
