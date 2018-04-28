@@ -53,12 +53,14 @@ function analyzeTweets(array){
     
     let obj ={
         "words" : sentiments,
-        "percentage" : 0
+        "percentage" : []
     }
-        console.log(obj);
-      console.log(count);
-      console.log((sentiments[0].anger.length/count)*100);
-    
+    console.log(sentiments);
+    console.log(sentiments[0].positive.length);
+   for(let i in sentiments[0]){
+     obj.percentage.push((sentiments[0][i].length/count)*100);
+   }
+console.log(obj);    
 }
 
 analyzeTweets(_SAMPLE_TWEETS);
