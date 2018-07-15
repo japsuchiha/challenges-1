@@ -127,6 +127,7 @@ function analyzeTweets(array) {
     return obj;
 }
 let data = analyzeTweets(_SAMPLE_TWEETS);
+console.log(data)
 console.log();
 let showStats = (obj)=>{
     
@@ -162,4 +163,64 @@ let showStats = (obj)=>{
     }
 }
 
-showStats(data);
+let loadChart = (data)=>{
+    
+    let option = document.querySelector('select');
+    d3.select("svg").remove();
+    if(option.value === 'pie'){
+    let colors = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
+
+    let svg = d3.select(".visual").append("svg").attr("width",400).attr("height",210),
+        radius = Math.min(d3.select("svg").attr("width"),d3.select("svg").attr("height"))/2,
+        g = svg.append("g").attr("transform", "translate(" + d3.select("svg").attr("width")/2 + "," + d3.select("svg").attr("height")/2 +")");
+    let pie = d3.pie();
+    let arc = d3.arc().innerRadius(0).outerRadius(radius);
+    let label = d3.arc().outerRadius(radius).innerRadius(radius-50);
+    let arcs = g.selectAll("arc").data(pie(data.percentage)).enter().append("g").attr("class","arc")
+    console.log(arcs)
+    arcs.append("path").attr("fill",(d,i)=>(colors(i))).attr("d",arc);
+    arcs.append("text").attr("transform",(d)=>("translate("+ label.centroid(d)+")")).text((d)=>((numeral(d.data).format('0.00'))));
+    console.log(pie(data.percentage));
+    }
+    else if(option.value === 'bar'){
+        console.log(Object.keys(data.words));
+        let color = "#4daf4a";
+        let barHeight = 30,
+        margin =1;
+        let myTool = d3.select('.visual')
+                   .append('div')
+                   .attr('class','tooltip')
+                   .attr("opacity","0")
+                   .attr("display","none")
+        d3.select("svg").remove();
+        let svg = d3.select(".visual")
+                    .append("svg")
+                    .attr("width", 400)
+                    .attr("height",barHeight*data.percentage.length)
+    let scale = d3.scaleLinear()
+                .domain([d3.min(data.percentage),d3.max(data.percentage)])
+                .range([5,1000]);
+    
+    
+    let bar = svg.selectAll("g").data(data.percentage).enter().append("g").attr("transform",(d,i)=>(
+        "translate(0," + i * barHeight +")"
+    ));
+    
+    bar.append("rect").attr("width",(d)=>{
+        return(scale(d))
+    }).attr("height",barHeight-margin).attr("style",`fill:${color}`).on("mouseover",(d,i)=>{
+        myTool.transition().duration(500).style("opacity","1").style("display","block")
+        myTool.html(
+            `<div id='name'>${Object.keys(data.words)[i]}</div>`
+        )
+    }).on("mouseout",(d,i)=>{
+        myTool.transition().duration(500).style("opacity","0").style("display","none")
+    });
+    bar.append("text").attr("x",(d)=>(d*(barHeight+10))).attr("y",barHeight/2).attr("dy",".35em").text((d)=>((numeral(d).format('0.00'))));
+    }
+}
+let handleChange = ()=>{
+    loadChart(data);
+}
+showStats(data)
+loadChart(data);
